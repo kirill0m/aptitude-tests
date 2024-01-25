@@ -6,7 +6,7 @@ def get_query_pars(url_str: str) -> dict | None:
     # query = url_str.split('?')[-1]
 
     if not query:
-        raise Exception('not queries found in url')
+        raise Exception('no queries found in url')
 
     return dict([p.split('=') for p in query.split('&')])
 
