@@ -1,4 +1,5 @@
 import pytest
+import time
 from _pytest.fixtures import FixtureRequest
 from tabulate import tabulate
 
@@ -17,6 +18,7 @@ class TestPTable:
         self.main_page = (request.getfixturevalue('main_page'))
 
     def test_ptable_elements(self):
+        time.sleep(1)
         self.main_page.click(self.main_page.locators.WEIGHT_BTN)
         elements = self.main_page.find_all(self.main_page.locators.MAIN_TABLE_ELEMENTS)
 
